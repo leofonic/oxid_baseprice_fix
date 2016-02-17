@@ -44,7 +44,7 @@ class baseprice_fix_oxarticle extends baseprice_fix_oxarticle_parent
                     Limit 1';
                 $sOxid = oxdb::getDb()->getOne($sSql);
                 $oVariant = oxnew('oxarticle');
-                if ($oVariant->load($sOxid)){
+                if ($sOxid && $oVariant->load($sOxid)){
                     $this->_oFromVariant = $oVariant;
                 }
             }
